@@ -1,11 +1,10 @@
-from collections import Counter
 
 
 def merge_sort(str: str,):
     if len(str) <= 1:
         return str
-    
-    mid = len(str) // 2
+
+    mid = len(str)//2
     left = str[:mid]
     right = str[mid:]
 
@@ -37,11 +36,11 @@ def merge(left: str, right: str):
 def is_anagram(first_string, second_string):
     str1 = merge_sort(first_string.lower())
     str2 = merge_sort(second_string.lower())
-    
+
     if first_string == '' or second_string == '':
         return (str1, str2, False)
-    
+
     if len(first_string) != len(second_string):
         return (str1, str2, False)
-    
+
     return (str1, str2, str1 == str2)
